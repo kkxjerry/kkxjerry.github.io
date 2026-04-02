@@ -183,6 +183,20 @@
                 通过 direct 与 reference-guided 两类 prompting 策略，缓解 positional bias、
                 hallucination 与 support-query 融合不足的问题。
               </p>
+              <div class="paper-methods">
+                <article class="paper-method">
+                  <strong>Direct Candidate Prompting</strong>
+                  <span>适用于通用物体识别任务，直接把输出约束到候选类别名集合。</span>
+                </article>
+                <article class="paper-method">
+                  <strong>Reference-Guided Prompting</strong>
+                  <span>适用于细粒度任务，引入 support visual references 与结构化指令。</span>
+                </article>
+                <article class="paper-method">
+                  <strong>Training-Free Inference</strong>
+                  <span>不修改模型参数，不增加额外训练，强调部署轻量与模型通用性。</span>
+                </article>
+              </div>
               <div class="paper-results-grid">
                 <article class="paper-result">
                   <strong>8</strong>
@@ -202,6 +216,69 @@
                 <li>在 5-way 1-shot 设置下，MiniImageNet 达到 99.49%，CUB200 达到 96.32%。</li>
                 <li>体现了从 multimodal prompting 研究走向轻量化 Agent / 应用系统的潜力。</li>
               </ul>
+              <div class="benchmark-block">
+                <h4>代表性实验结果</h4>
+                <div class="benchmark-grid">
+                  <article class="benchmark-item">
+                    <span>MiniImageNet</span>
+                    <strong>99.49%</strong>
+                    <em>Direct</em>
+                    <small>Qwen2.5-VL baseline 85.35%</small>
+                  </article>
+                  <article class="benchmark-item">
+                    <span>CIFAR-FS</span>
+                    <strong>93.42%</strong>
+                    <em>Direct</em>
+                    <small>Qwen2.5-VL baseline 68.26%</small>
+                  </article>
+                  <article class="benchmark-item">
+                    <span>TieredImageNet</span>
+                    <strong>97.85%</strong>
+                    <em>Direct</em>
+                    <small>Qwen2.5-VL baseline 82.67%</small>
+                  </article>
+                  <article class="benchmark-item">
+                    <span>CUB200</span>
+                    <strong>96.32%</strong>
+                    <em>Reference</em>
+                    <small>Direct 94.16%, baseline 80.57%</small>
+                  </article>
+                  <article class="benchmark-item">
+                    <span>Dogs</span>
+                    <strong>94.59%</strong>
+                    <em>Reference</em>
+                    <small>Direct 91.98%</small>
+                  </article>
+                  <article class="benchmark-item">
+                    <span>FGVCAircraft</span>
+                    <strong>89.27%</strong>
+                    <em>Reference</em>
+                    <small>baseline 75.02%</small>
+                  </article>
+                  <article class="benchmark-item">
+                    <span>Flowers102</span>
+                    <strong>98.13%</strong>
+                    <em>Reference</em>
+                    <small>优于 SRM 83.25%</small>
+                  </article>
+                  <article class="benchmark-item">
+                    <span>StanfordCars</span>
+                    <strong>99.06%</strong>
+                    <em>Reference</em>
+                    <small>优于 SRM 88.70%</small>
+                  </article>
+                </div>
+              </div>
+              <div class="analysis-strip">
+                <div>
+                  <strong>Prompt 设计观察</strong>
+                  <span>CUB200 上，官方 demo 的 composite image 方案仅 76.58%，明显低于 Reference 方案的 96.32%。</span>
+                </div>
+                <div>
+                  <strong>推理超参观察</strong>
+                  <span>在 CUB200 上，低温度设定更稳定，T=0.2 时准确率达到 96.80%。</span>
+                </div>
+              </div>
               <details>
                 <summary>摘要速览</summary>
                 <p>
@@ -229,6 +306,20 @@
                 pipeline。AFF 通过 align、filter、fuse 重新组织局部 token，MNN reducer 则保留
                 双向一致的 patch 匹配关系，从而让最终评分更稳定。
               </p>
+              <div class="paper-methods">
+                <article class="paper-method">
+                  <strong>Align</strong>
+                  <span>利用 CLS token 作为语义锚点，先把 patch token 拉向类别相关方向。</span>
+                </article>
+                <article class="paper-method">
+                  <strong>Filter + Fuse</strong>
+                  <span>筛除无关 patch，并把全局语义重新注入保留下来的局部 token。</span>
+                </article>
+                <article class="paper-method">
+                  <strong>MNN Reducer</strong>
+                  <span>只保留双向一致的 token 匹配关系，提升 dense matching 的鲁棒性。</span>
+                </article>
+              </div>
               <div class="paper-results-grid">
                 <article class="paper-result">
                   <strong>96.59%</strong>
@@ -248,6 +339,61 @@
                 <li>相较强 token baseline 提升 0.80 个百分点。</li>
                 <li>在文中报告设置下，推理吞吐约为 CPEA 的 8.4 倍。</li>
               </ul>
+              <div class="benchmark-block">
+                <h4>主要 benchmark 结果</h4>
+                <div class="benchmark-grid">
+                  <article class="benchmark-item">
+                    <span>miniImageNet</span>
+                    <strong>96.59 / 99.03</strong>
+                    <em>1-shot / 5-shot</em>
+                    <small>强基线 CPEA*: 95.79 / 98.85</small>
+                  </article>
+                  <article class="benchmark-item">
+                    <span>CIFAR-FS</span>
+                    <strong>91.97 / 98.03</strong>
+                    <em>1-shot / 5-shot</em>
+                    <small>CPEA*: 89.80 / 97.84</small>
+                  </article>
+                  <article class="benchmark-item">
+                    <span>CUB-200-2011</span>
+                    <strong>96.17 / 98.33</strong>
+                    <em>1-shot / 5-shot</em>
+                    <small>强基线 92.30 / 97.00</small>
+                  </article>
+                  <article class="benchmark-item">
+                    <span>tieredImageNet</span>
+                    <strong>90.45 / 97.21</strong>
+                    <em>1-shot / 5-shot</em>
+                    <small>较最佳基线 +0.33 / +0.65</small>
+                  </article>
+                  <article class="benchmark-item">
+                    <span>FC100</span>
+                    <strong>88.32 / 93.78</strong>
+                    <em>1-shot / 5-shot</em>
+                    <small>较最佳基线 +0.45 / +0.44</small>
+                  </article>
+                  <article class="benchmark-item">
+                    <span>Throughput</span>
+                    <strong>9.76 it/s</strong>
+                    <em>miniImageNet 5-way 1-shot</em>
+                    <small>CPEA: 1.16 it/s</small>
+                  </article>
+                </div>
+              </div>
+              <div class="analysis-strip">
+                <div>
+                  <strong>模块贡献</strong>
+                  <span>在 miniImageNet 1-shot 上，+Fuse+MNN 达到 96.25%，完整 AFF 进一步提升到 96.59%。</span>
+                </div>
+                <div>
+                  <strong>MNN 效果</strong>
+                  <span>相较 mean aggregation，MNN 在 miniImageNet 1-shot 上提升 0.84pt。</span>
+                </div>
+                <div>
+                  <strong>Backbone 泛化</strong>
+                  <span>DINOv2(frozen) 为 95.12%，切换到 DINOv3-B/16(frozen) 提升到 96.59%。</span>
+                </div>
+              </div>
               <details>
                 <summary>摘要速览</summary>
                 <p>

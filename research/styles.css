@@ -480,6 +480,112 @@ a {
   font-size: 0.92rem;
 }
 
+.paper-methods {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.paper-method {
+  padding: 15px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(22, 37, 43, 0.08);
+}
+
+.paper-method strong {
+  display: block;
+  font-size: 0.98rem;
+}
+
+.paper-method span {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.benchmark-block {
+  margin-top: 20px;
+}
+
+.benchmark-block h4 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+}
+
+.benchmark-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.benchmark-item {
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: rgba(255, 252, 246, 0.72);
+  border: 1px solid rgba(22, 37, 43, 0.08);
+}
+
+.benchmark-item span,
+.benchmark-item em,
+.benchmark-item small {
+  display: block;
+}
+
+.benchmark-item span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.benchmark-item strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 1.2rem;
+  letter-spacing: -0.03em;
+}
+
+.benchmark-item em {
+  margin-top: 4px;
+  color: var(--accent-deep);
+  font-style: normal;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.benchmark-item small {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.analysis-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.analysis-strip div {
+  padding: 15px 16px;
+  border-radius: 18px;
+  background: rgba(200, 97, 61, 0.08);
+  border: 1px solid rgba(200, 97, 61, 0.12);
+}
+
+.analysis-strip strong {
+  display: block;
+  font-size: 0.96rem;
+}
+
+.analysis-strip span {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 details {
   margin-top: 18px;
   border-top: 1px solid rgba(22, 37, 43, 0.08);
@@ -612,7 +718,13 @@ summary {
     padding: 20px;
   }
 
+  .paper-methods,
+  .benchmark-grid,
   .paper-results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-strip {
     grid-template-columns: 1fr;
   }
 
