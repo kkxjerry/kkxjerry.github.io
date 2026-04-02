@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="周贵超的个人研究主页，展示训练自由多模态 few-shot 学习、视觉基础模型方向论文与简历。"
+    />
+    <title>周贵超 | Research & Papers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <div class="ambient ambient-three"></div>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#top">
+          <span class="brand-mark">GZ</span>
+          <span class="brand-text">
+            <strong>Guichao Zhou</strong>
+            <span>个人研究主页</span>
+          </span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          菜单
+        </button>
+
+        <nav id="site-nav" class="site-nav">
+          <a href="#about">简介</a>
+          <a href="#research">研究方向</a>
+          <a href="#publications">论文</a>
+          <a href="#experience">经历</a>
+          <a href="#contact">联系</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero section">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">人工智能硕士在读</p>
+            <h1>
+              聚焦训练自由多模态学习、
+              <span>few-shot 识别与可落地 AI 系统</span>
+            </h1>
+            <p class="hero-lead">
+              我目前就读于华南师范大学人工智能学院，研究重点包括多模态大模型、视觉基础模型与
+              training-free few-shot learning。我也持续关注 AI Agent、模型评测以及能够真正落地的
+              智能应用系统。
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="assets/cv/zhouguichao-cv.pdf" target="_blank" rel="noreferrer">
+                下载简历
+              </a>
+              <a class="button button-secondary" href="#publications">查看论文</a>
+              <a class="button button-ghost" href="mailto:zgcpyy@163.com">邮件联系</a>
+            </div>
+
+            <div class="hero-metrics">
+              <article>
+                <strong>2</strong>
+                <span>当前论文稿件</span>
+              </article>
+              <article>
+                <strong>8+</strong>
+                <span>已验证数据集 / Benchmark</span>
+              </article>
+              <article>
+                <strong>99.49%</strong>
+                <span>MiniImageNet 最佳结果</span>
+              </article>
+            </div>
+          </div>
+
+          <aside class="profile-panel reveal">
+            <div class="profile-photo">
+              <img src="assets/images/profile.png" alt="周贵超照片" />
+            </div>
+            <div class="profile-card">
+              <p class="profile-name">周贵超</p>
+              <p class="profile-role">AI Research Student</p>
+              <ul class="profile-meta">
+                <li>华南师范大学</li>
+                <li>计算机视觉 / 多模态大模型</li>
+                <li>开放 AI / 多模态 / Agent 实习机会</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container split-section">
+          <div class="section-heading reveal">
+            <p class="eyebrow">简介</p>
+            <h2>以研究为主，也重视工程落地</h2>
+          </div>
+          <div class="section-copy reveal">
+            <p>
+              我的经历同时包含科研实验与工程实践。科研上，我主要做 training-free multimodal
+              prompting、冻结 backbone 下的 token-based few-shot classification，以及
+              Qwen2.5-VL、DINOv3 等模型相关实验。工程上，我做过 Go 后端开发，使用过
+              MySQL、Elasticsearch、Kafka，也负责过课题组 GPU 服务器环境维护与训练支持。
+            </p>
+            <p>
+              这个主页主要用于集中展示我的论文摘要、稿件下载、代表性图示、简历以及研究背后的
+              工程经验，适合作为学术主页和实习投递材料的补充页面。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="research" class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">研究方向</p>
+            <h2>我目前持续推进的几个主题</h2>
+          </div>
+
+          <div class="topic-grid">
+            <article class="topic-card reveal">
+              <span class="topic-index">01</span>
+              <h3>Training-Free Multimodal Learning</h3>
+              <p>
+                面向多模态大模型的 prompt 设计与推理增强，在不做 fine-tuning 的前提下提升
+                few-shot 分类与推理能力。
+              </p>
+            </article>
+            <article class="topic-card reveal">
+              <span class="topic-index">02</span>
+              <h3>Vision Foundation Models</h3>
+              <p>
+                在冻结 ViT backbone 的条件下，研究更好的 token 选择、dense matching 与鲁棒评分，
+                用于低样本视觉识别。
+              </p>
+            </article>
+            <article class="topic-card reveal">
+              <span class="topic-index">03</span>
+              <h3>AI Agents and Practical Systems</h3>
+              <p>
+                持续关注 agent workflow、tool use、多模态评测，以及把研究思路转成可部署的轻量级
+                AI 应用系统。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="publications" class="section publications-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">论文与结果</p>
+            <h2>当前论文稿件与代表性结果</h2>
+          </div>
+
+          <article class="paper-card reveal">
+            <div class="paper-content">
+              <div class="paper-badges">
+                <span class="badge badge-accent">IEEE TMM</span>
+                <span class="badge">大修</span>
+                <span class="badge">Multimodal LLM</span>
+              </div>
+              <h3>Boosting Few-Shot Classification with Training-Free Multimodal In-Context Learning</h3>
+              <p class="authors">
+                Yuwu Lu, <strong>Guichao Zhou</strong>, Wai Keung Wong, Zhihui Lai, Xuelong Li
+              </p>
+              <p class="paper-summary">
+                这项工作关注如何在不做额外训练的情况下，把现成的 multimodal LLM 直接用于
+                few-shot classification。我们设计了 Training-Free Prompting Framework，
+                通过 direct 与 reference-guided 两类 prompting 策略，缓解 positional bias、
+                hallucination 与 support-query 融合不足的问题。
+              </p>
+              <div class="paper-results-grid">
+                <article class="paper-result">
+                  <strong>8</strong>
+                  <span>标准 few-shot benchmark</span>
+                </article>
+                <article class="paper-result">
+                  <strong>99.49%</strong>
+                  <span>MiniImageNet, 5-way 1-shot</span>
+                </article>
+                <article class="paper-result">
+                  <strong>96.32%</strong>
+                  <span>CUB200, 5-way 1-shot</span>
+                </article>
+              </div>
+              <ul class="paper-highlights">
+                <li>基于 Qwen2.5-VL-7B-Instruct，在 8 个标准 few-shot benchmark 上完成验证。</li>
+                <li>在 5-way 1-shot 设置下，MiniImageNet 达到 99.49%，CUB200 达到 96.32%。</li>
+                <li>体现了从 multimodal prompting 研究走向轻量化 Agent / 应用系统的潜力。</li>
+              </ul>
+              <details>
+                <summary>摘要速览</summary>
+                <p>
+                  该框架通过更结构化的任务输入，提升模型从一般识别到细粒度分类的多模态推理能力。
+                  它保留了模型通用性，避免 fine-tuning 成本，并在完全 training-free 的设定下显著提升
+                  few-shot classification 表现。
+                </p>
+              </details>
+            </div>
+          </article>
+
+          <article class="paper-card reveal">
+            <div class="paper-content">
+              <div class="paper-badges">
+                <span class="badge badge-accent">Pattern Recognition</span>
+                <span class="badge">在投</span>
+                <span class="badge">Vision Foundation Model</span>
+              </div>
+              <h3>AFF: Align-Filter-Fuse Tokens with Mutual Nearest Neighbor Matching for Training-Free Few-Shot Classification</h3>
+              <p class="authors">
+                Yuwu Lu, <strong>Guichao Zhou</strong>, Wai Keung Wong, Zhihui Lai, Xuelong Li
+              </p>
+              <p class="paper-summary">
+                这篇工作提出了一个基于冻结 DINOv3 backbone 的 training-free few-shot classification
+                pipeline。AFF 通过 align、filter、fuse 重新组织局部 token，MNN reducer 则保留
+                双向一致的 patch 匹配关系，从而让最终评分更稳定。
+              </p>
+              <div class="paper-results-grid">
+                <article class="paper-result">
+                  <strong>96.59%</strong>
+                  <span>MiniImageNet 1-shot</span>
+                </article>
+                <article class="paper-result">
+                  <strong>+0.80 pt</strong>
+                  <span>相较强 token baseline</span>
+                </article>
+                <article class="paper-result">
+                  <strong>8.4×</strong>
+                  <span>相较 CPEA 的吞吐提升</span>
+                </article>
+              </div>
+              <ul class="paper-highlights">
+                <li>在 frozen DINOv3 protocol 下，MiniImageNet 1-shot 达到 96.59%。</li>
+                <li>相较强 token baseline 提升 0.80 个百分点。</li>
+                <li>在文中报告设置下，推理吞吐约为 CPEA 的 8.4 倍。</li>
+              </ul>
+              <details>
+                <summary>摘要速览</summary>
+                <p>
+                  该方法完全不引入额外训练，重点解决 token purification 与 robust dense matching。
+                  它使用 CLS token 作为语义锚点，并通过 mutual nearest-neighbor consistency 筛选
+                  匹配关系，从而提升低样本识别任务中的稳定性与效率。
+                </p>
+              </details>
+            </div>
+          </article>
+
+          <p class="manuscript-note reveal">
+            当前页面仅展示论文标题、状态、摘要与主要结果，不上传论文 PDF，也不提供论文预览图。
+          </p>
+        </div>
+      </section>
+
+      <section id="experience" class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">经历</p>
+            <h2>研究之外的工程与系统经验</h2>
+          </div>
+
+          <div class="experience-grid">
+            <article class="experience-card reveal">
+              <span class="experience-time">2024.01 - 2024.03</span>
+              <h3>FOFA Go 后端实习</h3>
+              <p>
+                参与政府监管场景诈骗分析平台后端开发，完成受害者管理、重点监测、日志管理、探测任务等
+                模块的联调与数据处理流程开发。
+              </p>
+              <p class="experience-stack">
+                Go, MySQL, Elasticsearch, Kafka, External APIs
+              </p>
+            </article>
+
+            <article class="experience-card reveal">
+              <span class="experience-time">2025 - Present</span>
+              <h3>课题组 GPU 服务器维护</h3>
+              <p>
+                负责实验环境部署、训练支持、推理排障和服务器日常维护，为课题组模型实验提供基础支撑。
+              </p>
+              <p class="experience-stack">
+                Linux, CUDA, Training Workflows, Issue Triage
+              </p>
+            </article>
+
+            <article class="experience-card reveal">
+              <span class="experience-time">2025 - Present</span>
+              <h3>游泳健身系统开发</h3>
+              <p>
+                负责需求梳理、功能规划、前后端协同与项目推进，持续积累面向真实业务场景的系统交付经验。
+              </p>
+              <p class="experience-stack">
+                Product Coordination, Implementation, Delivery
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section">
+        <div class="container contact-card reveal">
+          <div>
+            <p class="eyebrow">联系我</p>
+            <h2>欢迎交流 AI、多模态与 Agent 相关机会</h2>
+            <p>
+              如果你对 training-free multimodal learning、few-shot classification、
+              VLM evaluation 或实用型 agent 系统感兴趣，欢迎通过邮件联系我。
+            </p>
+          </div>
+          <div class="contact-actions">
+            <a class="button button-primary" href="mailto:zgcpyy@163.com">zgcpyy@163.com</a>
+            <a class="button button-secondary" href="assets/cv/zhouguichao-cv.pdf" target="_blank" rel="noreferrer">
+              简历 PDF
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> 周贵超</p>
+        <p>基于 GitHub Pages 构建</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
